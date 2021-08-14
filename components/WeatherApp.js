@@ -50,7 +50,7 @@ export default class WeatherApp extends React.Component {
       .then(response => response.json())
       .then(json => {
         this.setState({ data: json });
-        this.setState({ temp: (json.main.temp - 273.15).toFixed(2) + " °C" });
+        this.setState({ temp: (json.main.temp - 273.15).toFixed(1) + " °C" });
         this.setState({ city_display: json.name });
         this.setState({ icon: json.weather[0].icon });
         this.setState({ desc: json.weather[0].description });
